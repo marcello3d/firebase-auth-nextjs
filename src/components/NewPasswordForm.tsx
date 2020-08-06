@@ -15,7 +15,7 @@ export function NewPasswordForm({
   const password = useRef<HTMLInputElement>();
   const password2 = useRef<HTMLInputElement>();
 
-  const signupWithEmail = useCallback(
+  const changePassword = useCallback(
     (event: FormEvent) => {
       if (password2.current.value !== password.current.value) {
         setError(new Error('PASSWORDS_DO_NOT_MATCH'));
@@ -30,7 +30,7 @@ export function NewPasswordForm({
   );
 
   return (
-    <form onSubmit={signupWithEmail} className={styles.loginForm}>
+    <form onSubmit={changePassword} className={styles.loginForm}>
       <div>
         <label>
           New password:{' '}
