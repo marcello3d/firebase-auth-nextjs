@@ -1,6 +1,8 @@
 # Firebase Auth + Next.js
 
-This is a demo of using [firebase-auth-lite](https://github.com/samuelgozi/firebase-auth-lite/) with [Next.js](https://nextjs.org) for client-side authentication.
+This is an example of how to use [firebase-auth-lite](https://github.com/samuelgozi/firebase-auth-lite/) with [Next.js](https://nextjs.org) for client-side authentication.
+
+[Live demo](https://firebase-auth-nextjs.vercel.app)
 
 ## Running locally
 

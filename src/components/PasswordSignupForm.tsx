@@ -28,12 +28,7 @@ export function PasswordSignupForm() {
       <div>
         <label>
           E-mail:{' '}
-          <input
-            type="email"
-            ref={styles.email}
-            name="email"
-            autoComplete="email"
-          />
+          <input type="email" ref={email} name="email" autoComplete="email" />
         </label>
       </div>
       <div>
