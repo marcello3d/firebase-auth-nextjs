@@ -1,0 +1,6 @@
+.loginForm div {
+  padding: 0.2em;
+}
+.error {
+  color: darkred;
+}
