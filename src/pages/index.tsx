@@ -6,6 +6,9 @@ import { PasswordSignupForm } from '../components/PasswordSignupForm';
 import { GoogleLoginButton } from '../components/GoogleLoginButton';
 import Head from 'next/head';
 import { User } from '../lib/auth';
+import { AnonymousForm } from '../components/AnonymousForm';
+import { EmailOnlyForm } from '../components/EmailOnlyForm';
+import { ResetPasswordForm } from '../components/ResetPasswordForm';
 
 export default function Home() {
   const user = useAuth();
@@ -54,6 +57,11 @@ function NoAuth() {
       <div className={styles.card}>
         <h3>Login with third-party</h3>
         <GoogleLoginButton />
+        <AnonymousForm />
+      </div>
+      <div className={styles.card}>
+        <h3>Login with just an e-mail</h3>
+        <EmailOnlyForm />
       </div>
       <div className={styles.card}>
         <h3>Create a new demo e-mail account</h3>
@@ -62,6 +70,10 @@ function NoAuth() {
       <div className={styles.card}>
         <h3>Login with demo e-mail account</h3>
         <PasswordLoginForm />
+      </div>
+      <div className={styles.card}>
+        <h3>Reset password</h3>
+        <ResetPasswordForm />
       </div>
     </>
   );
@@ -85,7 +97,7 @@ function Authenticated({ user }: { user: User }) {
             </tr>
             <tr>
               <th>E-mail</th>
-              <td>{user.email}</td>
+              <td>{user.email ?? <i>None</i>}</td>
             </tr>
             <tr>
               <th>Photo</th>
