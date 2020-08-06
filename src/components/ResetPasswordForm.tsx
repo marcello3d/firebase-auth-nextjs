@@ -12,13 +12,11 @@ export function ResetPasswordForm() {
 
   const resetPassword = useCallback((event: FormEvent) => {
     event.preventDefault();
-    if (email.current) {
-      doAction(() =>
-        auth
-          .sendOobCode('PASSWORD_RESET', email.current.value)
-          .then(() => setDone(true)),
-      );
-    }
+    doAction(() =>
+      auth
+        .sendOobCode('PASSWORD_RESET', email.current.value)
+        .then(() => setDone(true)),
+    );
   }, []);
 
   if (done) {

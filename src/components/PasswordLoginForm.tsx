@@ -12,9 +12,7 @@ export function PasswordLoginForm() {
 
   const loginWithEmail = useCallback((event: FormEvent) => {
     event.preventDefault();
-    if (email.current && password.current) {
-      doAction(() => auth.signIn(email.current.value, password.current.value));
-    }
+    doAction(() => auth.signIn(email.current.value, password.current.value));
   }, []);
 
   return (

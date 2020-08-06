@@ -11,14 +11,10 @@ export function PasswordSignupForm() {
   const password2 = useRef<HTMLInputElement>();
 
   const signupWithEmail = useCallback((event: FormEvent) => {
-    if (email.current && password.current) {
-      if (password2.current.value !== password.current.value) {
-        setError(new Error('PASSWORDS_DO_NOT_MATCH'));
-      } else {
-        doAction(() =>
-          auth.signUp(email.current.value, password.current.value),
-        );
-      }
+    if (password2.current.value !== password.current.value) {
+      setError(new Error('PASSWORDS_DO_NOT_MATCH'));
+    } else {
+      doAction(() => auth.signUp(email.current.value, password.current.value));
     }
     event.preventDefault();
   }, []);
